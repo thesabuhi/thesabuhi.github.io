@@ -241,7 +241,7 @@ h5 {
     flex-direction: column;
     justify-content: center;
     min-height: 700px;
-    background: url(/img/bg/bgclients.jpg);
+    background: url(./img/bg/bgclients.jpg);
 }
 
 .clients-info {
@@ -353,7 +353,7 @@ input:focus {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background: url(/img/bg/bgfooter.png) right no-repeat;
+    background: url(./img/bg/bgfooter.png) right no-repeat;
     height: 300px;
 }
 
@@ -534,7 +534,7 @@ input:focus {
         flex-direction: column;
         justify-content: center;
         min-height: 700px;
-        background: url(/img/bg/bgclients.jpg);
+        background: url(./img/bg/bgclients.jpg);
     }
     
     .clients-info {
