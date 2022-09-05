@@ -2,10 +2,46 @@
 
 html {
     font-family: 'Exo 2', sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
+}
+
+.side-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    left: 97%;
+    z-index: 10;
+    transition: 0.05s;
+}
+
+.side-navigation:hover {
+    transition: 0.05s;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    color: rgb(255,109,109);
+    border-radius: 50%;
+    margin: 10px;
+    transition: 0.1s;
+}
+
+.dot:hover {
+    transform: scale(1.5);
+    transition: 0.1s;
+    color: rgb(255,109,109);
+}
+
+.dot:visited {
+    color: rgb(255,109,109);
 }
 
 .video-section {
@@ -325,10 +361,23 @@ input:focus {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin: 0 13%;
+    margin: 0 auto;
 }
 
 .footer-box {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.footer-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-box-menu {
     display: flex;
     flex-direction: column;
     width: 220px;
@@ -387,8 +436,6 @@ input:focus {
     font-size: 16px;
 }
 
-
-
 .socials {
     display: flex;
     flex-direction: row;
@@ -418,4 +465,186 @@ input:focus {
 .button:hover {
     box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.25);
     transition: 0.2s;
+}
+
+@media screen and (max-width: 768px)  {
+    .side-navigation {
+        display: none;
+    }
+
+    .video-section h1 {
+        max-width: 90%;
+        font-size: 46px;
+    }
+
+    .about-section {
+        background: none;
+        text-align: center;
+    }
+
+    .left-text {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .feature-section {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        background-color: #f6f5f3;
+    }
+
+    .feature-text {
+        text-align: center;
+        margin: 30px 0;
+    }
+    
+    .feature-boxes {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 40px;
+    }
+    
+    .feature-box {
+        margin: 10px 0;
+    }
+    
+    .macbook-section {
+        background: none;
+        text-align: center;
+    }
+    
+    .macbook-box {
+        display: none;
+    }
+    
+    .macbook-text {
+        align-items: center;
+        width: 90%;
+        margin: 0;
+    }
+
+    .clients-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 700px;
+        background: url(/img/bg/bgclients.jpg);
+    }
+    
+    .clients-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    
+    .client-box {
+        max-width: 100%;
+    }
+    
+    .client-box img {
+        width: 75px;
+    }
+    
+    .client-box h3 {
+        color: #fff;
+    }
+    
+    .client-box h4 {
+        text-transform: none;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .clients-logo {
+        display: inline-flex;
+        flex-wrap: wrap;
+        margin: 30px 0;
+    }
+    
+    .clients-logo img {
+        padding: 12px 2px;
+        margin: 3px;
+        max-width: 90px;
+    }
+
+    .browser-section {
+        align-items: center;
+        min-height: auto;
+    }
+    
+    .browser-text {
+        padding: 40px 0;
+        max-width: 90%;
+    }
+    
+    .browser-image {
+        align-items: flex-end;
+    }
+
+    .browser-image img {
+        max-width: 90%;
+    }
+
+    .sub-section {
+        padding: 40px 0px;
+        text-align: center;
+    }
+    
+    .sub-section form input {
+        margin: 3px 0;
+    }
+
+    .signup {
+        min-width: 300px;
+        margin: 3px 0;
+    }
+
+    .sub-section p {
+        max-width: 70%;
+    }
+
+    .footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        height: auto;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+    
+    .footer-box {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .footer-menu {
+        display: inline-flex;
+        flex-direction: row;
+    }
+    
+    .footer-box-menu {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 20px;
+        margin: 0 10px;
+    }
+
 }
