@@ -155,7 +155,8 @@ body {
 
 .copyright {
     color: rgb(255, 255, 255)!important;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 300;
 }
 
 @media only screen and (max-width: 768px) {
