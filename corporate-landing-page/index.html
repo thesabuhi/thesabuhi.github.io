@@ -11,8 +11,8 @@
 </head>
 <body>
     <section class="side-navigation">
-        <div class="side-navigation-container">
-            <div class="dots-container"></div>
+        <div class="side-navigation__container">
+            <div class="side-navigation__container__dots"></div>
                 <a href="#video-section"><i class="fa-solid fa-circle dot"></i></a>
                 <a href="#about-section"><i class="fa-solid fa-circle dot"></i></a>
                 <a href="#feature-section"><i class="fa-solid fa-circle dot"></i></a>
@@ -24,55 +24,54 @@
     </section>
 
     <section class="video-section" id="video-section">
-        <h1>There is no other platforms for you as like</h1>
-        <a href="#"><i class="fa-solid fa-circle-play video-button"></i></a>
-        <button class="cta-button" type="button">Try now</button>
-        <p>* No need to add cards details</p>
+        <h1 class="video-section__title">There is no other platforms for you as like</h1>
+        <a class="video-section__play-button" href="#"><i class="fa-solid fa-circle-play video-button"></i></a>
+        <button class="video-section__cta-button" type="button">Try now</button>
+        <p class="video-section__disclaimer">* No need to add cards details</p>
     </section>
 
     <section class="about-section" id="about-section">
-        <div class="left-text">
-            <h4>New design</h4>
-            <h2>There is no other platforms for you as like<span class="pink">....</span></h2>
+        <div class="about-section__text">
+            <h4 class="about-section__text__heading">New design</h4>
+            <h2 class="about-section__text__subheading">There is no other platforms for you as like<span class="about-section__text__dots">....</span></h2>
                 
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quo at corporis repellat nesciunt. Et id aliquid distinctio voluptatibus facilis, perferendis nulla dicta? Optio placeat voluptate totam ea numquam? Similique! </p>
-            <p><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur blanditiis, dicta quas! Aperiam, omnis. Id obcaecati suscipit deserunt, cum error.</p>
+            <p class="about-section__text__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quo at corporis repellat nesciunt. Et id aliquid distinctio voluptatibus facilis, perferendis nulla dicta? Optio placeat voluptate totam ea numquam? Similique!</p>
+            <p class="about-section__text__description"><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur blanditiis, dicta quas! Aperiam, omnis. Id obcaecati suscipit deserunt, cum error.</p>
         </div>
     </section>
 
     <section class="feature-section" id="feature-section">
-        <div class="feature-content">
-            <div class="feature-text">
-                <h4>New features</h4>
-                <h2>Some awesome features</h2>
+        <div class="feature-section__content">
+            <div class="feature-section__content__text">
+                <h4 class="feature-section__content__text__subheading">New features</h4>
+                <h2 class="feature-section__content__text__heading">Some awesome features</h2>
             </div>
-            <div class="feature-boxes">
-                <div class="feature-box">
+            <div class="feature-section__content__container">
+                <div class="feature-section__content__container__box">
                     <img src="./img/icons/presentation.svg" alt="presentation">
-                    <h5>Some awesome features</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
+                    <h5 class="feature-section__content__container__box__subheading">Some awesome features</h5>
+                    <p class="feature-section__content__container__box__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
                 </div>
-                <div class="feature-box">
+                <div class="feature-section__content__container__box">
                     <img src="./img/icons/airplane.svg" alt="airplane">
-                    <h5>Some awesome features</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
+                    <h5 class="feature-section__content__container__box__subheading">Some awesome features</h5>
+                    <p class="feature-section__content__container__box__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
                 </div>
-                <div class="feature-box">
+                <div class="feature-section__content__container__box">
                     <img src="./img/icons/hourglass.svg" alt="bulb">
-                    <h5>Some awesome features</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
+                    <h5 class="feature-section__content__container__box__subheading">Some awesome features</h5>
+                    <p class="feature-section__content__container__box__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur assumenda explicabo ducimus. Deleniti!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="macbook-section" id="macbook-section">
-        <div class="macbook-container">
-            <div class="macbook-box">
+        <div class="macbook-section__container">
+            <div class="macbook-section__container__macbook-box">
                 <img src="./img/macbook.png" alt="macbook">
             </div>
-
-            <div class="macbook-text">
+            <div class="macbook-section__container__macbook-text">
                 <h4>New design</h4>
                 <h2>Responsive design, just need your tap<span class="pink">....</span></h2>
                 
@@ -82,30 +81,30 @@
     </section>
 
     <section class="clients-section" id="clients-section">
-        <div class="clients-info">
-            <div class="client-box">
+        <div class="clients-section__info">
+            <div class="clients-section__info__box">
                 <img src="./img/team1.jpg" alt="client">
-                <h3>Jonathan Doe</h3>
-                <h4>Co Founder</h4>
-                <p>Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
+                <h3 class="clients-section__info__box__name">Jonathan Doe</h3>
+                <h4 class="clients-section__info__box__role">Co Founder</h4>
+                <p class="clients-section__info__box__biography">Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
                     ullam cum nemo eius hic mollitia pariatur veniam debitis.</p>
             </div>
-            <div class="client-box">
-                <img src="./img/team2.jpg" alt="client">
-                <h3>Jonathan Doe</h3>
-                <h4>Co Founder</h4>
-                <p>Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
+            <div class="clients-section__info__box">
+                <img src="./img/team1.jpg" alt="client">
+                <h3 class="clients-section__info__box__name">Jonathan Doe</h3>
+                <h4 class="clients-section__info__box__role">Co Founder</h4>
+                <p class="clients-section__info__box__biography">Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
                     ullam cum nemo eius hic mollitia pariatur veniam debitis.</p>
             </div>
-            <div class="client-box">
-                <img src="./img/team3.jpg" alt="client">
-                <h3>Jonathan Doe</h3>
-                <h4>Co Founder</h4>
-                <p>Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
+            <div class="clients-section__info__box">
+                <img src="./img/team1.jpg" alt="client">
+                <h3 class="clients-section__info__box__name">Jonathan Doe</h3>
+                <h4 class="clients-section__info__box__role">Co Founder</h4>
+                <p class="clients-section__info__box__biography">Lorem ipsum dolor sit amet consectetur repudiandae ex minima, nisii
                     ullam cum nemo eius hic mollitia pariatur veniam debitis.</p>
             </div>
         </div>
-        <div class="clients-logo">
+        <div class="clients-section__logo">
             <img src="./img/partners/partner1.png" alt="partner">
             <img src="./img/partners/partner2.png" alt="partner">
             <img src="./img/partners/partner3.png" alt="partner">
@@ -115,27 +114,27 @@
     </section>
 
     <section class="browser-section" id="browser-section">
-        <div class="browser-text">
-            <h4>New features</h4>
-            <h2>Some awesome features</h2>
-            Necessitatibus, dolorem hic enim eveniet cupiditate ullam quam eos! Reprehenderit, consequatur.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet omnis vel quia unde molestias totam magnam nesciunt consectetur ducimus.
+        <div class="browser-section__text">
+            <h4 class="browser-section__text__subheading">New features</h4>
+            <h2 class="browser-section__text__heading">Some awesome features</h2>
+            <p class="browser-section__text__description">Necessitatibus, dolorem hic enim eveniet cupiditate ullam quam eos! Reprehenderit, consequatur.</p>
+            <p class="browser-section__text__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet omnis vel quia unde molestias totam magnam nesciunt consectetur ducimus.
         </div>
-        <div class="browser-image">
+        <div class="browser-section__image">
             <img src="./img/browser.png" alt="">
         </div>
     </section>
 
     <section class="sub-section" id="sub-section">
-        <h4>New features</h4>
-        <h2>Over 1000 designers are using...</h2>
+        <h4 class="sub-section__subheading">New features</h4>
+        <h2 class="sub-section__heading">Over 1000 designers are using...</h2>
         <form action="#">
             <input id="name" class="input" type="text" placeholder="full name" required>
             <input type="email" placeholder="your email" required>
             <input type="password" name="pass" id="" placeholder="password" required>
             <button class="button signup" type="submit">Try now</button>
         </form>
-        <p>By Signing up you agree to our
+        <p class="sub-section__terms">By Signing up you agree to our
             <a href="#">Terms & Services</a>
         </p>
 
@@ -143,33 +142,33 @@
     
     <footer class="footer">
         <div class="footer-container">
-         <div class="footer-box">
+         <div class="footer-container__box">
                 <img src="./img/logo.png" alt="logo">
                 <p>Aenean lacinia bibendum nulla sed consectetur. Aenean eu leo quam.
                     USA & CAN: 1-888-123-4567
                     <br>Address: 34 Brokel Rd. NY</p>
            </div>
-        <div class="footer-menu">
-            <div class="footer-box-menu">
+        <div class="footer-container__menu">
+            <div class="footer-container__menu__box">
                 <h3>Support</h3>
                 <p>Help Center</p>
                 <p>Get Starde</p>
                 <p>Contact us</p>
             </div>
-            <div class="footer-box-menu">
+            <div class="footer-container__menu__box">
                 <h3>About us</h3>
                 <p>About us</p>
                 <p>GTerms of use</p>
                 <p>Privacy Policy</p>
             </div>
         </div>
-            <div class="footer-box">
+            <div class="footer-container__menu__box">
                 <h3>Get newsletter</h3>
-                <div class="footer-email">
-                    <input class="footer-input" type="email" placeholder="EMAIL">
+                <div class="footer-container__menu__box__footer-email">
+                    <input class="footer-container__menu__box__footer-email__input" type="email" placeholder="EMAIL">
                     <a class="sub-mini-btn" type="submit"><i class="fa-solid fa-paper-plane"></i></a>
                 </div>
-                <div class="socials">
+                <div class="footer-container__menu__box__socials">
                     <a href="#"><i class="fa-brands fa-dribbble"></i></a>
                     <a href="#"><i class="fab fa-facebook"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
