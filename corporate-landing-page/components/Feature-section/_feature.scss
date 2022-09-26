@@ -1,0 +1,77 @@
+.feature-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: url(../img/bg/bgfeatures-pens.png) 5% 0% no-repeat,
+                url(../img/bg/bgfeatures-earphones.png) 95% 0% no-repeat,
+                url(../img/bg/bgfeatures-coffee.png) 95% 100% no-repeat;
+    background-color: #f6f5f3;
+    min-height: 600px;
+}
+
+.feature-section__content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.feature-section__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-section__subheading {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: RGB(255, 109, 109);
+    margin: 0px 0px 10px 0px;
+}
+
+.feature-section__features {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.feature-section__box {
+    text-align: center;
+    width: 320px;
+    min-height: 200px;
+    margin: 0 20;
+}
+
+.feature-section__box img {
+    width: 70px;
+    height: 70px;
+}
+
+@media screen and (max-width: 768px)  {
+    .feature-section {
+        display: flex;
+        flex-direction: column;
+        background: none;
+        background-color: #f6f5f3;
+    }
+    
+    .feature-section__title {
+        text-align: center;
+        margin: 30px 0;
+    }
+    
+    .feature-section__features {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0px 40px;
+    }
+    
+    .feature-section__box {
+        margin: 10px 0;
+    }
+}

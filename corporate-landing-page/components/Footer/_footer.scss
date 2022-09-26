@@ -1,0 +1,131 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background: url(./img/bg/bgfooter.png) right no-repeat;
+    height: 300px;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0 auto;
+}
+
+.footer__box {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.footer__box-logo {
+    max-width: 100px;
+    margin: 12px 0;
+}
+
+.footer__menu-box {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    padding: 20px;
+    margin: 0 10px;
+}
+
+.footer__box-heading {
+    margin: 23px 0;
+} 
+
+.footer__box-item {
+    font-size: 14px;
+    line-height: 1.7em;
+}
+
+
+.footer__box-email {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.footer__email-input {
+    width: 200px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid #b8b8bf;
+    border-right-color: #ff6d6d;
+    font-size: 14px;
+
+    &:focus {
+        border: 2px solid #ff6d6d;
+        outline: none;
+    }
+}
+
+.fa-solid.fa-paper-plane {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff6d6d;
+    width: 50px;
+    height: 50px;
+    border-radius: 0 5px 5px 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+}
+
+.footer__link {
+    color: #cbcbcb;
+    margin-right: 20px; 
+    font-size: 26px;
+}
+
+@media screen and (max-width: 768px)  {
+    .footer {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        height: auto;
+    }
+
+    .footer__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    .footer__box {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+        padding: 20px;
+        margin: 0 10px;
+    }
+
+    .footer__column-horizontal {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer__menu-box {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        padding: 20px;
+        margin: 0 10px;
+    }
+}

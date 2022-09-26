@@ -1,0 +1,72 @@
+.sub-section {
+    background-color: #323969;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 30px 50px;
+}
+
+.sub-section__subheading {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: RGB(255, 109, 109);
+    margin: 0px 0px 10px 0px;
+}
+
+.sub-section__heading {
+    color: white;
+}
+
+.sub-section a {
+    color: #646464;
+}
+
+.sub-section form {
+    margin: 30px 0;
+}
+
+.sub-section__form-input {
+    color: #FFFFFF;
+	width: 300px;
+	height: 50px;
+	padding: 10px 30px;
+	box-sizing: border-box;
+	background-color: #474d78;
+	border: 2px solid #999cb4;
+	border-radius: 7px;
+    margin: 0px 5px;
+	text-transform: uppercase;
+}
+
+.sub-section__form-input:focus {
+    border: 2px solid #ff6d6d;
+    outline: none;
+}
+
+.sub-section__signup-button {
+    @include button;
+}
+
+@media screen and (max-width: 768px)  {
+    .sub-section {
+        padding: 40px 0px;
+        text-align: center;
+    }
+    
+    .sub-section__form-input {
+        margin: 3px 0;
+    }
+    
+    .sub-section__signup-button {
+        min-width: 300px;
+        margin: 3px 0;
+    }
+    
+    .sub-section__terms {
+        max-width: 70%;
+    }
+}

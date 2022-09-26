@@ -1,0 +1,61 @@
+.macbook-section {
+    display: flex;
+    background: url(./img/bgmacbook.png) no-repeat left;
+    background-size: auto 100%;
+    min-height: 600px;
+}
+
+.macbook-section__elements {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+.macbook-section__macbook-box {
+    display: flex;
+    align-items: center;
+    min-width: 50%;
+    justify-content: center;
+}
+
+.macbook-section__macbook-box img {
+    min-height: 470px;
+}
+
+.macbook-section__macbook-text {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    margin-left: 150px;
+    margin-right: 100px;
+}
+
+.macbook-section__subheading {
+    text-transform: uppercase;
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    color: RGB(255, 109, 109);
+    margin: 0px 0px 10px 0px;
+}
+
+@media screen and (max-width: 768px)  {
+    .macbook-section {
+        background: none;
+        text-align: center;
+    }
+    
+    .macbook-section__macbook-box {
+        display: none;
+    }
+    
+    .macbook-section__macbook-text {
+        align-items: center;
+        width: 90%;
+        margin: 0;
+    }
+}

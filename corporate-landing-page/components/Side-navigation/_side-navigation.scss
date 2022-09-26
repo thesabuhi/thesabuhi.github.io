@@ -1,0 +1,41 @@
+.side-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 50px;
+    height: 100vh;
+    position: fixed;
+    left: 97%;
+    z-index: 10;
+    transition: 0.05s;
+}
+
+.side-navigation:hover {
+    transition: 0.05s;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    color: rgb(255,109,109);
+    border-radius: 50%;
+    margin: 10px;
+    transition: 0.1s;
+}
+
+.dot:hover {
+    transform: scale(1.5);
+    transition: 0.1s;
+    color: rgb(255,109,109);
+}
+
+.dot:visited {
+    color: rgb(255,109,109);
+}
+
+
+@media screen and (max-width: 768px)  {
+    .side-navigation {
+        display: none;
+    }
+}
