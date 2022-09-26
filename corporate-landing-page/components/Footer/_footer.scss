@@ -14,6 +14,11 @@
     margin: 0 auto;
 }
 
+.footer__column-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
 .footer__box {
     display: flex;
     flex-direction: column;
@@ -114,11 +119,6 @@
         width: 250px;
         padding: 20px;
         margin: 0 10px;
-    }
-
-    .footer__column-horizontal {
-        display: flex;
-        flex-direction: row;
     }
 
     .footer__menu-box {
