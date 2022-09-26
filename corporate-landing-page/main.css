@@ -626,6 +626,11 @@ h5 {
   font-size: 26px;
 }
 
+.footer__column-horizontal {
+  display: flex;
+  flex-direction: row;
+}
+
 @media screen and (max-width: 768px) {
   .footer {
     flex-direction: row;
@@ -647,10 +652,6 @@ h5 {
     width: 250px;
     padding: 20px;
     margin: 0 10px;
-  }
-  .footer__column-horizontal {
-    display: flex;
-    flex-direction: row;
   }
   .footer__menu-box {
     display: flex;
