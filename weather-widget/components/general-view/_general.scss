@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     min-width: 60%;
-    padding: 30px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
 }
 
 .general__header {
     display: flex;
     flex-direction: row;
+    align-items: center;
     padding: 0 30px;
-    height: 80px;
+    min-height: 90px;
     border-bottom: 1px solid #f6f8fc;
 }
 
@@ -86,7 +87,7 @@
 .today {
     display: flex;
     flex-direction: column;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .today__title {
@@ -118,7 +119,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 49%;
-    height: 130px;
+    height: 125px;
     margin-bottom: 15px;
     background-color: $background-color;
     border-radius: $border-radius;
@@ -183,7 +184,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 30px 30px 0px 30px;
+    margin: 20px 30px 0px 30px;
 }
 
 .forecast__block {

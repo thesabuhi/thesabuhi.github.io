@@ -41,11 +41,17 @@
     font-weight: 500;
 }
 
-.detail__weather {
+.detail__weather-container {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     height: 200px;
+}
+
+.detail__weather {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
 .detail__weather-info {
@@ -92,7 +98,7 @@
 .detail__title {
     font-size: 22px;
     font-weight: 400;
-    padding: 35px 0px 12px 0px;
+    padding: 15px 0px 10px 0px;
 }
 
 .detail__chance-row {
