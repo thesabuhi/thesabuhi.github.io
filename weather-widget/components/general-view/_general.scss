@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     min-width: 60%;
-    padding: 30px 0;
+    padding: 30px 0px 0px 0px;
 }
 
 .general__header {
@@ -42,7 +42,7 @@
     align-items: center;
     height: 60px;
     margin: 0 10px;
-    padding-left: 13px;
+    padding-left: 20px;
     color: #909197;
     background-color: #FCFBFC;
 }
@@ -86,7 +86,7 @@
 .today {
     display: flex;
     flex-direction: column;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .today__title {
@@ -110,24 +110,32 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 30px 30px;
+    margin: 30px 30px 15px 30px;
 }
+
 .today__block {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     width: 49%;
     height: 130px;
+    margin-bottom: 15px;
     background-color: $background-color;
+    border-radius: $border-radius;
+    
+    &:hover {
+        @include dropshadow;
+    }
 }
 
 .today__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 36px;
+    font-size: 42px;
     min-width: 20%;
     color: $blue;
+    margin-left: 10px;
 }
 
 .today__center {
@@ -147,7 +155,7 @@
 
 .today__center-value {
     padding: 10px 0;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     color: $heading-color;
 }
@@ -167,4 +175,56 @@
         margin: 4px 8px 0px 0px;
         color: $blue;
     }
+}
+
+.forecast__info-blocks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 30px 30px 0px 30px;
+}
+
+.forecast__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 18.5%;
+    height: 136px;
+    margin-bottom: 14px;
+    background-color: $background-color;
+    border-radius: $border-radius;
+
+    &:hover {
+        @include dropshadow;
+    }
+}
+
+.forecast__date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: $third-color;
+    padding: 5px;
+}
+
+.forecast__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    width: 60px;
+    height: 50px;
+    padding: 5px;
+    color: $blue;
+}
+
+.forecast__value {
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: $heading-color;
 }
