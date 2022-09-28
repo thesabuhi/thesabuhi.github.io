@@ -43,7 +43,7 @@
 
 .detail__weather-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-end;
     height: 200px;
 }
@@ -51,7 +51,9 @@
 .detail__weather {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: flex-end;
+    width: 100%;
 }
 
 .detail__weather-info {
@@ -86,6 +88,7 @@
 
 .detail__separator {
     height: 20px;
+    width: 100%;
     border-bottom: 1px solid $third-color;
 }
 

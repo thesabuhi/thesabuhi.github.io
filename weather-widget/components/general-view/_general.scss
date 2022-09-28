@@ -45,7 +45,7 @@
     margin: 0 10px;
     padding-left: 20px;
     color: #909197;
-    background-color: #FCFBFC;
+    background-color: $background-color;
 }
 
 .search-input {
@@ -57,12 +57,13 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     font-size: 16px;
-    background-color: #FCFBFC;
+    background-color: $background-color;
+    border-radius: $border-radius;
 }
 
 .search-input::placeholder {
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     color: $third-color;
     left: 25px!important;
@@ -81,7 +82,8 @@
     height: 60px;
     width: 60px;
     margin: 0 10px;
-    background-color: $background-color
+    background-color: $background-color;
+    border-radius: $border-radius;
 }
 
 .today {
@@ -91,6 +93,9 @@
 }
 
 .today__title {
+    color: $heading-color;
+    font-size: 22px;
+    font-weight: 500;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -123,9 +128,11 @@
     margin-bottom: 15px;
     background-color: $background-color;
     border-radius: $border-radius;
-    
+    border: 1px solid transparent;
+
     &:hover {
         @include dropshadow;
+        border: 1px solid #8CB2FB;
     }
 }
 
@@ -197,9 +204,11 @@
     margin-bottom: 14px;
     background-color: $background-color;
     border-radius: $border-radius;
+    border: 1px solid transparent;
 
     &:hover {
         @include dropshadow;
+        border: 1px solid #8CB2FB;
     }
 }
 
