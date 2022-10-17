@@ -341,7 +341,11 @@ a {
 }
 
 .detail__weather-icon {
-  font-size: 44px;
+  max-height: 100px;
+}
+
+.detail__weather-icon img {
+  width: 100px;
 }
 
 .detail__weather-value {
@@ -361,6 +365,7 @@ a {
   font-weight: 300;
   line-height: 1.2;
   padding-bottom: 22px;
+  text-transform: capitalize;
 }
 
 .detail__separator {
@@ -410,7 +415,7 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
-  background-color: #8CB2FB;
+  background-color: #8cb2fb;
   border-radius: 99px;
 }
 
@@ -420,7 +425,7 @@ progress::-moz-progress-bar {
 }
 
 progress::-moz-progress-value {
-  background-color: #8CB2FB;
+  background-color: #8cb2fb;
   border-radius: 99px;
 }
 
@@ -448,7 +453,7 @@ progress::-moz-progress-value {
   border: 1px solid transparent;
 }
 .detail__sunrise-box:hover {
-  border: 1px solid #8CB2FB;
+  border: 1px solid #8cb2fb;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   transition: ease-in-out 0.2s;
 }
