@@ -29,7 +29,7 @@ function getDate() {
 
 getDate();
 getClockTime();
-setInterval(getClockTime, 500);
+setInterval(getClockTime, 501);
 
 getApiData("Baku");
 
