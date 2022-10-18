@@ -14,10 +14,24 @@ function getClockTime() {
   document.getElementById("detail__time").innerHTML = clock;
 }
 
+function getDate() {
+  const currentDate = new Date();
+  const month = currentDate.toLocaleString("default", { month: "long" });
+  const weekDay = currentDate.toLocaleString("default", { weekday: "long" });
+
+  document.querySelector(
+    ".general__heading"
+  ).textContent = `${month}, ${currentDate.getFullYear()}`;
+  document.querySelector(
+    ".general__subheading"
+  ).textContent = `${weekDay}, ${month} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+}
+
+getDate();
 getClockTime();
 setInterval(getClockTime, 500);
 
-getApiData("Moscow");
+getApiData("Baku");
 
 // Input City (serach)
 document
