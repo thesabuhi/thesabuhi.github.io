@@ -1,239 +1,248 @@
 .general {
-    display: flex;
-    flex-direction: column;
-    min-width: 60%;
-    padding: 0px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  min-width: 65%;
+  padding: 0px 0px 0px 0px;
 }
 
 .general__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 30px;
-    min-height: 90px;
-    border-bottom: 1px solid #f6f8fc;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  min-height: 90px;
+  border-bottom: 1px solid #f6f8fc;
 }
 
 .general__header-dates {
-    display: flex;
-    flex-direction: column;
-    min-width: 30%;
+  display: flex;
+  flex-direction: column;
+  min-width: 30%;
 }
 
 .general__heading {
-    font-size: 24px;
-    letter-spacing: 0.4px;
-    color: $heading-color;
+  font-size: 24px;
+  letter-spacing: 0.4px;
+  color: $heading-color;
 }
 
 .general__subheading {
-    @include p;
+  @include p;
 }
 
 .general__header-elements {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    min-width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  min-width: 70%;
 }
 
 .general__header-search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    margin: 0 10px;
-    padding-left: 20px;
-    color: #909197;
-    background-color: $background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 62px;
+  margin: 0 10px;
+  padding-left: 20px;
+  border: 1px solid $background-color;
+  color: #909197;
+  background-color: $background-color;
+  border-radius: $border-radius;
+
+  &:focus-within {
+    transition: ease-in-out 0.2s;
+    border: 1px solid $secondary-color;
+  }
 }
 
 .search-input {
-    width: 330px;
-    height: 60px;
-    padding-left: 15px;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    background-color: $background-color;
+  width: 330px;
+  height: 60px;
+  padding-left: 15px;
+  border: none;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: $border-radius;
+  background-color: $background-color;
 }
 
 .search-input::placeholder {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color: $third-color;
-    left: 25px!important;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $third-color;
+  left: 25px !important;
 }
 
 .search-icon {
-    font-size: 14px;
-    width: 20px;
-    height: 20px;
+  font-size: 14px;
+  width: 20px;
+  height: 20px;
 }
 
-.general__header-notification, .general__header-account {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-    margin: 0 10px;
-    background-color: $background-color;
-    border-radius: $border-radius;
+.general__header-notification,
+.general__header-account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 62px;
+  width: 62px;
+  margin: 0 10px;
+  background-color: $background-color;
+  border-radius: $border-radius;
 }
 
 .today {
-    display: flex;
-    flex-direction: column;
-    padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
 }
 
 .today__title {
-    color: $heading-color;
-    font-size: 22px;
-    font-weight: 500;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 30px;
+  color: $heading-color;
+  font-size: 22px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
 }
 
 .today__more-detail {
-    color: $secondary-color;
-    font-weight: 500;
-    font-size: 18px;
-    padding-right: 10px;
+  color: $secondary-color;
+  font-weight: 500;
+  font-size: 18px;
+  padding-right: 10px;
 }
 
 .today__info-blocks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 30px 30px 15px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px 30px 15px 30px;
 }
 
 .today__block {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 49%;
-    height: 125px;
-    margin-bottom: 15px;
-    background-color: $background-color;
-    border-radius: $border-radius;
-    border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 49%;
+  height: 125px;
+  margin-bottom: 15px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
 
-    &:hover {
-        @include dropshadow;
-        border: 1px solid #8CB2FB;
-    }
+  &:hover {
+    @include dropshadow;
+    border: 1px solid #8cb2fb;
+  }
 }
 
 .today__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 42px;
-    min-width: 20%;
-    color: $blue;
-    margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  min-width: 20%;
+  color: $blue;
+  margin-left: 10px;
 }
 
 .today__center {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    min-width: 30%;
-    margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 30%;
+  margin-left: 30px;
 }
 
 .today__center-text {
-    font-weight: 500;
-    font-size: 18px;
-    color: $third-color;
+  font-weight: 500;
+  font-size: 18px;
+  color: $third-color;
 }
 
 .today__center-value {
-    padding: 10px 0;
-    font-size: 36px;
-    font-weight: 700;
-    color: $heading-color;
+  padding: 10px 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: $heading-color;
 }
 
 .today__right {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: $third-color;
-    min-width: 30%;
-    padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: $third-color;
+  min-width: 30%;
+  padding-top: 30px;
 
-    & i {
-        margin: 4px 8px 0px 0px;
-        color: $blue;
-    }
+  & i {
+    margin: 4px 8px 0px 0px;
+    color: $blue;
+  }
 }
 
 .forecast__info-blocks {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 20px 30px 0px 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 30px 0px 30px;
 }
 
 .forecast__block {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    width: 18.5%;
-    height: 136px;
-    margin-bottom: 14px;
-    background-color: $background-color;
-    border-radius: $border-radius;
-    border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  width: 18.5%;
+  height: 136px;
+  margin-bottom: 14px;
+  background-color: $background-color;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
 
-    &:hover {
-        @include dropshadow;
-        border: 1px solid #8CB2FB;
-    }
+  &:hover {
+    @include dropshadow;
+    border: 1px solid #8cb2fb;
+  }
 }
 
 .forecast__date {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    color: $third-color;
-    padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: $third-color;
+  padding: 5px;
 }
 
 .forecast__icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 36px;
-    width: 60px;
-    height: 50px;
-    padding: 5px;
-    color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  width: 60px;
+  height: 50px;
+  padding: 5px;
+  color: $blue;
 }
 
 .forecast__value {
-    padding: 10px 0;
-    font-size: 20px;
-    font-weight: 600;
-    color: $heading-color;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: $heading-color;
 }

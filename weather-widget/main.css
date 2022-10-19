@@ -23,7 +23,7 @@ a {
 .general {
   display: flex;
   flex-direction: column;
-  min-width: 60%;
+  min-width: 65%;
   padding: 0px 0px 0px 0px;
 }
 
@@ -63,11 +63,17 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
+  height: 62px;
   margin: 0 10px;
   padding-left: 20px;
+  border: 1px solid rgb(246, 246, 246);
   color: #909197;
   background-color: rgb(246, 246, 246);
+  border-radius: 8px;
+}
+.general__header-search:focus-within {
+  transition: ease-in-out 0.2s;
+  border: 1px solid #5579CC;
 }
 
 .search-input {
@@ -79,6 +85,7 @@ a {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 16px;
+  border-radius: 8px;
   background-color: rgb(246, 246, 246);
 }
 
@@ -112,12 +119,13 @@ a {
   height: 20px;
 }
 
-.general__header-notification, .general__header-account {
+.general__header-notification,
+.general__header-account {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60px;
-  width: 60px;
+  height: 62px;
+  width: 62px;
   margin: 0 10px;
   background-color: rgb(246, 246, 246);
   border-radius: 8px;
@@ -170,7 +178,7 @@ a {
 .today__block:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   transition: ease-in-out 0.2s;
-  border: 1px solid #8CB2FB;
+  border: 1px solid #8cb2fb;
 }
 
 .today__icon {
@@ -245,7 +253,7 @@ a {
 .forecast__block:hover {
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   transition: ease-in-out 0.2s;
-  border: 1px solid #8CB2FB;
+  border: 1px solid #8cb2fb;
 }
 
 .forecast__date {

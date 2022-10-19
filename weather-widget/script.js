@@ -1,16 +1,20 @@
 // Clock
 "use strict";
-function getClockTime() {
-  const d = new Date();
-  d.getHours();
-  d.getMinutes();
+let apiIsCalled = false;
+function getClockTime(apiIsCalled, apiHours, apiMinutes) {
+  let apiCalled = true;
+  apiCalled = apiIsCalled;
+  console.log(apiCalled, "test");
   let clock;
-  if (d.getMinutes() < 10) {
-    clock = d.getHours() + ":" + "0" + d.getMinutes();
-  } else {
-    clock = d.getHours() + ":" + d.getMinutes();
-  }
+  let hours = apiHours;
+  let minutes = apiMinutes;
 
+  if (apiHours < 10) {
+    hours = "0" + apiHours;
+  } else {
+    hours = apiHours;
+  }
+  clock = hours + ":" + minutes;
   document.getElementById("detail__time").innerHTML = clock;
 }
 
@@ -27,9 +31,15 @@ function getDate() {
   ).textContent = `${weekDay}, ${month} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
 }
 
+var saveInputValue;
+
 getDate();
 getClockTime();
-setInterval(getClockTime, 501);
+setInterval(function () {
+  if (saveInputValue) {
+    getApiData(saveInputValue);
+  }
+}, 3000);
 
 getApiData("Baku");
 
@@ -55,29 +65,59 @@ function getApiData(city) {
   };
 
   fetch(
-    `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=10`,
+    `https://weatherapi-com.p.rapidapi.com/forecast.json?q=${city}&days=4`,
     options
   )
     .then((response) => response.json())
     .then((response) => {
+      saveInputValue = response.location.name;
+
       document.querySelector(".detail__city p").textContent =
         response.location.name;
+
+      saveInputValue = response.location.name;
+
       document.querySelector(".detail__country p").textContent =
         response.location.country;
+
       document.querySelector(
         ".detail__weather-value p"
       ).textContent = `${response.current.temp_c}°C`;
+
       document.querySelector(".detail__weather-text p").textContent =
         response.current.condition.text;
+
+      document.getElementById(
+        "humidity"
+      ).textContent = `${response.current.humidity}%`;
+      document.getElementById(
+        "wind-speed"
+      ).textContent = `${response.current.wind_kph} km/h`;
+      document.getElementById(
+        "pressure"
+      ).textContent = `${response.current.pressure_mb} mb`;
+      document.getElementById(
+        "chance-of-rain"
+      ).textContent = `${response.forecast.forecastday[0].day.daily_chance_of_rain}%`;
+
       let weatherIcon = response.current.condition.icon;
       document
         .querySelector(".detail__weather-icon img")
         .setAttribute("src", weatherIcon.replace("64x64", "128x128"));
 
+      let localtime = response.location.localtime;
+      localtime = localtime.split(" ")[1];
+      let apiHours = localtime.split(":")[0];
+      let apiMinutes = localtime.split(":")[1];
+      apiIsCalled = true;
+      getClockTime(apiIsCalled, apiHours, apiMinutes);
+      console.log(apiHours);
+      console.log(apiMinutes);
       console.log(response);
     })
 
     .catch((err) => {
+      clearInterval;
       console.error(err);
     });
 }
