@@ -100,20 +100,49 @@ function getApiData(city) {
         "chance-of-rain"
       ).textContent = `${response.forecast.forecastday[0].day.daily_chance_of_rain}%`;
 
+      let localtime = response.location.localtime;
+      localtime = localtime.split(" ")[1];
+      let apiHours = localtime.split(":")[0];
+      let apiMinutes = localtime.split(":")[1];
+
+      let sunriseClock =
+        response.forecast.forecastday[0].astro.sunrise.split(" ")[0];
+      let sunriseHours = sunriseClock.split(":")[0];
+      let sunriseMinutes = sunriseClock.split(":")[1];
+
+      let sunriseEstime =
+        apiHours - sunriseHours >= 1
+          ? apiHours - sunriseHours
+          : apiMinutes - sunriseMinutes;
+
+      let sunsetClock =
+        response.forecast.forecastday[0].astro.sunset.split(" ")[0];
+      let sunsetHours = sunsetClock.split(":")[0];
+      let sunsetMinutes = sunsetClock.split(":")[1];
+      sunsetHours = 5;
+      let sunsetEstime =
+        apiHours - sunsetHours >= 1
+          ? apiHours - sunsetHours
+          : apiMinutes - sunsetMinutes;
+
+      document.querySelector(".detail__sunrise-time p").textContent =
+        response.forecast.forecastday[0].astro.sunrise;
+      document.querySelector(".detail__sunset-time p").textContent =
+        response.forecast.forecastday[0].astro.sunset;
+      document.querySelector(
+        ".detail__sunrise-estimate p"
+      ).textContent = `${sunriseEstime} hours ago`;
+      document.querySelector(".detail__sunset-estimate p").textContent = `${
+        12 - sunsetEstime
+      } hours later`;
+
       let weatherIcon = response.current.condition.icon;
       document
         .querySelector(".detail__weather-icon img")
         .setAttribute("src", weatherIcon.replace("64x64", "128x128"));
 
-      let localtime = response.location.localtime;
-      localtime = localtime.split(" ")[1];
-      let apiHours = localtime.split(":")[0];
-      let apiMinutes = localtime.split(":")[1];
       apiIsCalled = true;
       getClockTime(apiIsCalled, apiHours, apiMinutes);
-      console.log(apiHours);
-      console.log(apiMinutes);
-      console.log(response);
     })
 
     .catch((err) => {

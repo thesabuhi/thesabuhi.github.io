@@ -469,7 +469,7 @@ progress::-moz-progress-value {
 .detail__sunrise-icon {
   font-size: 28px;
   font-weight: 300;
-  width: 29%;
+  width: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,7 +477,7 @@ progress::-moz-progress-value {
 }
 
 .detail__sunrise-info {
-  width: 39%;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -488,12 +488,14 @@ progress::-moz-progress-value {
   font-weight: 300;
 }
 
-.detail__sunrise-time {
-  font-size: 24px;
+.detail__sunrise-time,
+.detail__sunset-time {
+  font-size: 20px;
   font-weight: 500;
 }
 
-.detail__sunrise-estimate {
+.detail__sunrise-estimate,
+.detail__sunset-estimate {
   font-size: 13px;
   font-weight: 200;
   width: 29%;
