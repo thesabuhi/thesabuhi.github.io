@@ -119,11 +119,23 @@ function getApiData(city) {
         response.forecast.forecastday[0].astro.sunset.split(" ")[0];
       let sunsetHours = sunsetClock.split(":")[0];
       let sunsetMinutes = sunsetClock.split(":")[1];
+
       sunsetHours = 5;
-      let sunsetEstime =
-        apiHours - sunsetHours >= 1
-          ? apiHours - sunsetHours
-          : apiMinutes - sunsetMinutes;
+
+      let sunsetEstimate;
+      let sunsetBelowHour = Boolean;
+      let sunsetEstimateText = String;
+
+      if (sunsetHours - apiHours >= 1) {
+        sunsetBelowHour = false;
+        return (sunsetEstimate = sunsetHours - apiHours);
+      } else {
+        sunsetBelowHour = true;
+        return (sunsetEstimate = sunsetMinutes - apiMinutes);
+      }
+      sunsetEstimateText = sunsetBelowHour
+        ? `${sunsetEstimate} minutes left`
+        : `${sunsetEstimate} hours left`;
 
       document.querySelector(".detail__sunrise-time p").textContent =
         response.forecast.forecastday[0].astro.sunrise;
@@ -132,9 +144,11 @@ function getApiData(city) {
       document.querySelector(
         ".detail__sunrise-estimate p"
       ).textContent = `${sunriseEstime} hours ago`;
-      document.querySelector(".detail__sunset-estimate p").textContent = `${
-        12 - sunsetEstime
-      } hours later`;
+      document.querySelector(
+        ".detail__sunset-estimate p"
+      ).textContent = `${sunsetEstimateText}`;
+
+      console.log(sunsetEstimateText, "sunsettext");
 
       let weatherIcon = response.current.condition.icon;
       document
