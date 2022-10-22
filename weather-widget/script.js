@@ -117,22 +117,28 @@ function getApiData(city) {
 
       let sunsetClock =
         response.forecast.forecastday[0].astro.sunset.split(" ")[0];
-      let sunsetHours = sunsetClock.split(":")[0];
+      let sunsetHours = +12 + Number(sunsetClock.split(":")[0]);
       let sunsetMinutes = sunsetClock.split(":")[1];
 
-      sunsetHours = 5;
+      console.log(sunsetHours, "testtttt");
+
+      //Eger Sunrise >= Sunset onda sunriseEstimate =
+      sunsetHours = 21;
 
       let sunsetEstimate;
       let sunsetBelowHour = Boolean;
       let sunsetEstimateText = String;
 
-      if (sunsetHours - apiHours >= 1) {
-        sunsetBelowHour = false;
-        return (sunsetEstimate = sunsetHours - apiHours);
-      } else {
-        sunsetBelowHour = true;
-        return (sunsetEstimate = sunsetMinutes - apiMinutes);
-      }
+      let calculateEstimateTime = function () {
+        if (sunsetHours - apiHours >= 1) {
+          sunsetBelowHour = false;
+          return (sunsetEstimate = sunsetHours - apiHours);
+        } else {
+          sunsetBelowHour = true;
+          return (sunsetEstimate = sunsetMinutes - apiMinutes);
+        }
+      };
+      calculateEstimateTime();
       sunsetEstimateText = sunsetBelowHour
         ? `${sunsetEstimate} minutes left`
         : `${sunsetEstimate} hours left`;
