@@ -4,7 +4,6 @@ let apiIsCalled = false;
 function getClockTime(apiIsCalled, apiHours, apiMinutes) {
   let apiCalled = true;
   apiCalled = apiIsCalled;
-  console.log(apiCalled, "test");
   let clock;
   let hours = apiHours;
   let minutes = apiMinutes;
@@ -100,61 +99,59 @@ function getApiData(city) {
         "chance-of-rain"
       ).textContent = `${response.forecast.forecastday[0].day.daily_chance_of_rain}%`;
 
+      //Finding local time
       let localtime = response.location.localtime;
       localtime = localtime.split(" ")[1];
       let apiHours = localtime.split(":")[0];
       let apiMinutes = localtime.split(":")[1];
 
+      //Finding sunrise time
       let sunriseClock =
         response.forecast.forecastday[0].astro.sunrise.split(" ")[0];
       let sunriseHours = sunriseClock.split(":")[0];
       let sunriseMinutes = sunriseClock.split(":")[1];
 
-      let sunriseEstime =
-        apiHours - sunriseHours >= 1
-          ? apiHours - sunriseHours
-          : apiMinutes - sunriseMinutes;
-
+      //Finding sunset time
       let sunsetClock =
         response.forecast.forecastday[0].astro.sunset.split(" ")[0];
       let sunsetHours = +12 + Number(sunsetClock.split(":")[0]);
       let sunsetMinutes = sunsetClock.split(":")[1];
 
-      console.log(sunsetHours, "testtttt");
+      //Creating variables
+      let hoursLater = " hours later";
+      let minutesLater = " minutes later";
+      let hoursAgo = " hours ago";
+      let minutesAgo = " minutes ago";
 
-      //Eger Sunrise >= Sunset onda sunriseEstimate =
-      sunsetHours = 21;
+      let estimatedSunriseHour;
+      let estimatedSunriseMinute;
+      let estimatedSunsetHour;
+      let estimatedSunsetMinute;
 
-      let sunsetEstimate;
-      let sunsetBelowHour = Boolean;
-      let sunsetEstimateText = String;
+      let estimatedSunrise;
+      let estimatedSunset;
 
-      let calculateEstimateTime = function () {
-        if (sunsetHours - apiHours >= 1) {
-          sunsetBelowHour = false;
-          return (sunsetEstimate = sunsetHours - apiHours);
+      let calculateEstimate = function () {
+        if (sunriseHours - Date.now > 1) {
+          console.log(1 + 1);
         } else {
-          sunsetBelowHour = true;
-          return (sunsetEstimate = sunsetMinutes - apiMinutes);
+          console.log(2 + 2);
         }
       };
-      calculateEstimateTime();
-      sunsetEstimateText = sunsetBelowHour
-        ? `${sunsetEstimate} minutes left`
-        : `${sunsetEstimate} hours left`;
 
+      calculateEstimate();
+
+      // Writing to DOM
       document.querySelector(".detail__sunrise-time p").textContent =
         response.forecast.forecastday[0].astro.sunrise;
       document.querySelector(".detail__sunset-time p").textContent =
         response.forecast.forecastday[0].astro.sunset;
       document.querySelector(
         ".detail__sunrise-estimate p"
-      ).textContent = `${sunriseEstime} hours ago`;
+      ).textContent = `${estimatedSunrise}`;
       document.querySelector(
         ".detail__sunset-estimate p"
-      ).textContent = `${sunsetEstimateText}`;
-
-      console.log(sunsetEstimateText, "sunsettext");
+      ).textContent = `${estimatedSunset}`;
 
       let weatherIcon = response.current.condition.icon;
       document
