@@ -131,13 +131,50 @@ function getApiData(city) {
       let estimatedSunrise;
       let estimatedSunset;
 
-      let calculateEstimate = function () {
-        if (sunriseHours - Date.now > 1) {
-          console.log(1 + 1);
-        } else {
-          console.log(2 + 2);
+      function calculateEstimate() {
+        if (apiHours > 0 && apiHours < sunriseHours) {
+          if (sunriseHours - apiHours > 1) {
+            estimatedSunriseHour = sunriseHours - apiHours;
+            estimatedSunsetHour = sunsetHours - apiHours;
+            estimatedSunrise = `${estimatedSunriseHour} ${hoursLater}`;
+            estimatedSunset = `${estimatedSunsetHour} ${hoursLater}`;
+          } else if (sunriseHours - apiHours < 1) {
+            estimatedSunriseMinute = Math.abs(sunriseMinutes - apiMinutes);
+            estimatedSunsetHour = sunsetHours - apiHours;
+            estimatedSunrise = `${estimatedSunriseMinute} ${minutesLater}`;
+            estimatedSunset = `${estimatedSunsetHour} ${hoursLater}`;
+          }
+        } else if (sunriseHours < apiHours && apiHours < sunsetHours) {
+          if (apiHours - sunriseHours > 1) {
+            estimatedSunriseHour = apiHours - sunriseHours;
+            estimatedSunsetHour = sunsetHours - apiHours;
+            estimatedSunrise = `${estimatedSunriseHour} ${hoursAgo}`;
+            estimatedSunset = `${estimatedSunsetHour} ${hoursLater}`;
+          } else if (apiHours - sunriseHours < 1) {
+            estimatedSunriseMinute = Math.abs(sunriseMinutes - apiMinutes);
+            estimatedSunsetHour = sunsetHours - apiHours;
+            estimatedSunrise = `${estimatedSunriseMinute} ${minutesAgo}`;
+            estimatedSunset = `${estimatedSunsetHour} ${hoursLater}`;
+          } else if (sunsetHours - apiHours < 1) {
+            estimatedSunriseHour = apiHours - sunsetHours;
+            estimatedSunsetMinute = sunsetMinutes - apiMinutes;
+            estimatedSunrise = `${estimatedSunriseHour} ${hoursAgo}`;
+            estimatedSunset = `${estimatedSunsetMinute} ${minutesLater}`;
+          }
+        } else if (apiHours > sunsetHours && sunsetHours > sunriseHours) {
+          if (apiHours - sunsetHours > 1) {
+            estimatedSunriseHour = 24 - sunsetHours + sunriseHours;
+            estimatedSunsetHour = apiHours - sunsetHours;
+            estimatedSunrise = `${estimatedSunriseHour} ${hoursLater}`;
+            estimatedSunset = `${estimatedSunsetHour} ${hoursAgo}`;
+          } else if (apiHours - sunsetHours < 1) {
+            estimatedSunriseHour = 24 - sunsetHours + sunriseHours;
+            estimatedSunsetMinute = apiMinutes - sunsetMinutes;
+            estimatedSunrise = `${estimatedSunriseHour} ${hoursLater}`;
+            estimatedSunset = `${estimatedSunsetMinute} ${minutesAgo}`;
+          }
         }
-      };
+      }
 
       calculateEstimate();
 
