@@ -10,7 +10,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0 30px;
-  min-height: 90px;
+  min-height: 130px;
   border-bottom: 1px solid #f6f8fc;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .search-input {
-  width: 330px;
+  width: 430px;
   height: 60px;
   padding-left: 15px;
   border: none;
@@ -97,7 +97,7 @@
 .today {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .today__title {
@@ -132,7 +132,7 @@
   flex-direction: row;
   justify-content: space-around;
   width: 49%;
-  height: 125px;
+  height: 145px;
   margin-bottom: 15px;
   background-color: $background-color;
   border-radius: $border-radius;
@@ -152,6 +152,10 @@
   min-width: 20%;
   color: $blue;
   margin-left: 10px;
+
+  & img {
+    width: 52px;
+  }
 }
 
 .today__center {
@@ -193,13 +197,17 @@
   }
 }
 
+.forecast {
+  margin: 10px 0 10px 0;
+}
+
 .forecast__info-blocks {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 30px 0px 30px;
+  margin: 30px 30px 30px 30px;
 }
 
 .forecast__block {
@@ -208,7 +216,7 @@
   justify-content: flex-end;
   align-items: center;
   width: 18.5%;
-  height: 136px;
+  height: 162px;
   margin-bottom: 14px;
   background-color: $background-color;
   border-radius: $border-radius;

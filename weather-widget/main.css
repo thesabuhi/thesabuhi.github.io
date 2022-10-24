@@ -32,7 +32,7 @@ a {
   flex-direction: row;
   align-items: center;
   padding: 0 30px;
-  min-height: 90px;
+  min-height: 130px;
   border-bottom: 1px solid #f6f8fc;
 }
 
@@ -77,7 +77,7 @@ a {
 }
 
 .search-input {
-  width: 330px;
+  width: 430px;
   height: 60px;
   padding-left: 15px;
   border: none;
@@ -134,7 +134,7 @@ a {
 .today {
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
+  padding: 20px 0;
 }
 
 .today__title {
@@ -169,7 +169,7 @@ a {
   flex-direction: row;
   justify-content: space-around;
   width: 49%;
-  height: 125px;
+  height: 145px;
   margin-bottom: 15px;
   background-color: rgb(246, 246, 246);
   border-radius: 8px;
@@ -189,6 +189,9 @@ a {
   min-width: 20%;
   color: #306AFE;
   margin-left: 10px;
+}
+.today__icon img {
+  width: 52px;
 }
 
 .today__center {
@@ -229,13 +232,17 @@ a {
   color: #306AFE;
 }
 
+.forecast {
+  margin: 10px 0 10px 0;
+}
+
 .forecast__info-blocks {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 20px 30px 0px 30px;
+  margin: 30px 30px 30px 30px;
 }
 
 .forecast__block {
@@ -244,7 +251,7 @@ a {
   justify-content: flex-end;
   align-items: center;
   width: 18.5%;
-  height: 136px;
+  height: 162px;
   margin-bottom: 14px;
   background-color: rgb(246, 246, 246);
   border-radius: 8px;
@@ -401,6 +408,15 @@ a {
   font-size: 20px;
   font-weight: 300;
   height: 60px;
+}
+
+.detail__clock {
+  width: 55px;
+}
+
+.detail__chance-value {
+  width: 55px;
+  text-align: right;
 }
 
 .detail__progress-bar {

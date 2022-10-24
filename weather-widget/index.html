@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:image" content="./weatherFavicon.png" />
-    <link rel="icon" type="image/x-icon" href="./weatherFavicon.png" />
+    <link rel="icon" type="image/x-icon" href="./icons/weatherFavicon.png" />
     <link rel="stylesheet" href="main.css" />
     <script
       src="https://kit.fontawesome.com/4ceb6a3058.js"
@@ -30,27 +30,16 @@
               placeholder="Search location here"
             />
           </div>
-          <a href="#" class="general__header-notification">
-            <i class="fa-regular fa-bell"></i>
-          </a>
-          <a href="#" class="general__header-account">
-            <i class="fa-regular fa-user"></i>
-          </a>
         </div>
       </div>
       <div class="today">
         <div class="today__title">
           <div><p class="today__heading">Today overview</p></div>
-          <div>
-            <a href="#" class="today__more-detail"
-              >More detail <i class="fa-solid fa-arrow-right"></i
-            ></a>
-          </div>
         </div>
         <div class="today__info-blocks">
           <div class="today__block">
             <div class="today__icon">
-              <i class="fa fa-light fa-wind"></i>
+              <img src="./icons/humidity.png" alt="humidity" />
             </div>
             <div class="today__center">
               <div class="today__center-text">
@@ -67,7 +56,7 @@
           </div>
           <div class="today__block">
             <div class="today__icon">
-              <i class="fa fa-light fa-wind"></i>
+              <img src="./icons/windy.png" alt="wind-speed" />
             </div>
             <div class="today__center">
               <div class="today__center-text">
@@ -84,7 +73,7 @@
           </div>
           <div class="today__block">
             <div class="today__icon">
-              <i class="fa fa-light fa-wind"></i>
+              <img src="./icons/barometer.png" alt="air pressure" />
             </div>
             <div class="today__center">
               <div class="today__center-text">
@@ -101,7 +90,7 @@
           </div>
           <div class="today__block">
             <div class="today__icon">
-              <i class="fa fa-light fa-wind"></i>
+              <img src="./icons/001-rain.png" alt="rain" />
             </div>
             <div class="today__center">
               <div class="today__center-text">
@@ -120,12 +109,7 @@
       </div>
       <div class="forecast">
         <div class="today__title">
-          <div><p class="today__heading">10 day weather forecast</p></div>
-          <div>
-            <a href="#" class="today__more-detail"
-              >More detail <i class="fa-solid fa-arrow-right"></i
-            ></a>
-          </div>
+          <div><p class="today__heading">5 days weather forecast</p></div>
         </div>
         <div class="forecast__info-blocks">
           <div class="forecast__block">
@@ -183,61 +167,6 @@
               <p>18°C</p>
             </div>
           </div>
-          <div class="forecast__block">
-            <div class="forecast__date">
-              <p>27 January</p>
-            </div>
-            <div class="forecast__icon">
-              <i class="fa fa-light fa-wind"></i>
-            </div>
-            <div class="forecast__value">
-              <p>18°C</p>
-            </div>
-          </div>
-          <div class="forecast__block">
-            <div class="forecast__date">
-              <p>28 January</p>
-            </div>
-            <div class="forecast__icon">
-              <i class="fa fa-light fa-wind"></i>
-            </div>
-            <div class="forecast__value">
-              <p>18°C</p>
-            </div>
-          </div>
-          <div class="forecast__block">
-            <div class="forecast__date">
-              <p>29 January</p>
-            </div>
-            <div class="forecast__icon">
-              <i class="fa fa-light fa-wind"></i>
-            </div>
-            <div class="forecast__value">
-              <p>18°C</p>
-            </div>
-          </div>
-          <div class="forecast__block">
-            <div class="forecast__date">
-              <p>30 january</p>
-            </div>
-            <div class="forecast__icon">
-              <i class="fa fa-light fa-wind"></i>
-            </div>
-            <div class="forecast__value">
-              <p>18°C</p>
-            </div>
-          </div>
-          <div class="forecast__block">
-            <div class="forecast__date">
-              <p>31 January</p>
-            </div>
-            <div class="forecast__icon">
-              <i class="fa fa-light fa-wind"></i>
-            </div>
-            <div class="forecast__value">
-              <p>18°C</p>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -285,9 +214,16 @@
             <p>6 AM</p>
           </div>
           <div class="detail__progress-bar">
-            <progress id="file" value="44" max="100">44%</progress>
+            <progress
+              class="chance-of-rain-progressbar-6"
+              id="file"
+              value="44"
+              max="100"
+            >
+              44%
+            </progress>
           </div>
-          <div class="detail__chance-value">
+          <div id="chance-of-rain-6" class="detail__chance-value">
             <p>44%</p>
           </div>
         </div>
@@ -296,9 +232,16 @@
             <p>12 PM</p>
           </div>
           <div class="detail__progress-bar">
-            <progress id="file" value="30" max="100">30%</progress>
+            <progress
+              class="chance-of-rain-progressbar-12"
+              id="file"
+              value="30"
+              max="100"
+            >
+              30%
+            </progress>
           </div>
-          <div class="detail__chance-value">
+          <div id="chance-of-rain-12" class="detail__chance-value">
             <p>30%</p>
           </div>
         </div>
@@ -307,9 +250,16 @@
             <p>6 PM</p>
           </div>
           <div class="detail__progress-bar">
-            <progress id="file" value="67" max="100">674%</progress>
+            <progress
+              class="chance-of-rain-progressbar-18"
+              id="file"
+              value="67"
+              max="100"
+            >
+              67%
+            </progress>
           </div>
-          <div class="detail__chance-value">
+          <div id="chance-of-rain-18" class="detail__chance-value">
             <p>67%</p>
           </div>
         </div>
@@ -318,9 +268,16 @@
             <p>12 AM</p>
           </div>
           <div class="detail__progress-bar">
-            <progress id="file" value="72" max="100">72%</progress>
+            <progress
+              class="chance-of-rain-progressbar-24"
+              id="file"
+              value="72"
+              max="100"
+            >
+              72%
+            </progress>
           </div>
-          <div class="detail__chance-value">
+          <div id="chance-of-rain-24" class="detail__chance-value">
             <p>72%</p>
           </div>
         </div>

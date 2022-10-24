@@ -124,6 +124,15 @@
   height: 60px;
 }
 
+.detail__clock {
+  width: 55px;
+}
+
+.detail__chance-value {
+  width: 55px;
+  text-align: right;
+}
+
 .detail__progress-bar {
   display: flex;
   justify-content: flex-start;

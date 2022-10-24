@@ -190,6 +190,44 @@ function getApiData(city) {
         ".detail__sunset-estimate p"
       ).textContent = `${estimatedSunset}`;
 
+      //Chance of rain hourly
+      document.getElementById("chance-of-rain-6").textContent =
+        response.forecast.forecastday[0].hour[5].chance_of_rain + "%";
+      document.getElementById("chance-of-rain-12").textContent =
+        response.forecast.forecastday[0].hour[11].chance_of_rain + "%";
+      document.getElementById("chance-of-rain-18").textContent =
+        response.forecast.forecastday[0].hour[17].chance_of_rain + "%";
+      document.getElementById("chance-of-rain-24").textContent =
+        response.forecast.forecastday[0].hour[23].chance_of_rain + "%";
+
+      document.querySelector(".chance-of-rain-progressbar-6").value =
+        response.forecast.forecastday[0].hour[5].chance_of_rain;
+      document.querySelector(".chance-of-rain-progressbar-12").value =
+        response.forecast.forecastday[0].hour[11].chance_of_rain;
+      document.querySelector(".chance-of-rain-progressbar-18").value =
+        response.forecast.forecastday[0].hour[17].chance_of_rain;
+      document.querySelector(".chance-of-rain-progressbar-24").value =
+        response.forecast.forecastday[0].hour[23].chance_of_rain;
+
+      //5 days weather forecast
+      const forecastDay = response.forecast.forecastday;
+      //console.log(forecastDay);
+
+      let forecast__dates = document.querySelectorAll(".forecast__date");
+      forecastDay.forEach((day, index) => {
+        console.log(day);
+        //console.log(day.day.avgtemp_c);
+        forecast__dates[index].innerHTML = day.date;
+        console.log(index);
+
+        //document.quer;
+      });
+      // let dateForecast = new Date();
+      // let dateForecast.getDate();
+      // dateForecast.getMonth();
+      // let daysForecast = {};
+      // console.log(dateForecast);
+
       let weatherIcon = response.current.condition.icon;
       document
         .querySelector(".detail__weather-icon img")
@@ -197,6 +235,7 @@ function getApiData(city) {
 
       apiIsCalled = true;
       getClockTime(apiIsCalled, apiHours, apiMinutes);
+      console.log(response);
     })
 
     .catch((err) => {
