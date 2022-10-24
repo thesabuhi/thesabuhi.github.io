@@ -54,7 +54,7 @@ document
   });
 
 // Fetch API
-function getApiData(city) {
+function getApiData(city, selectedDay) {
   const options = {
     method: "GET",
     headers: {
@@ -71,6 +71,18 @@ function getApiData(city) {
     .then((response) => {
       saveInputValue = response.location.name;
 
+      //Selecting the day
+      const forecastDay = response.forecast.forecastday;
+      let selectedDay = 0;
+      let forecast__block = document.querySelectorAll(".forecast__block");
+      forecastDay.forEach((day, index) => {
+        forecast__block[index].addEventListener("click", function () {
+          selectedDay = index;
+          console.log(selectedDay);
+          console.log(response.forecast.forecastday[selectedDay].day.avgtemp_c);
+        });
+      });
+
       document.querySelector(".detail__city p").textContent =
         response.location.name;
 
@@ -81,7 +93,7 @@ function getApiData(city) {
 
       document.querySelector(
         ".detail__weather-value p"
-      ).textContent = `${response.current.temp_c}°C`;
+      ).textContent = `${response.forecast.forecastday[selectedDay].day.avgtemp_c}°C`;
 
       document.querySelector(".detail__weather-text p").textContent =
         response.current.condition.text;
@@ -210,23 +222,38 @@ function getApiData(city) {
         response.forecast.forecastday[0].hour[23].chance_of_rain;
 
       //5 days weather forecast
-      const forecastDay = response.forecast.forecastday;
-      //console.log(forecastDay);
+      const forecastIcon = response.forecast.forecastday;
+      const forecastTemp = response.forecast.forecastday;
 
       let forecast__dates = document.querySelectorAll(".forecast__date");
       forecastDay.forEach((day, index) => {
-        console.log(day);
-        //console.log(day.day.avgtemp_c);
-        forecast__dates[index].innerHTML = day.date;
-        console.log(index);
-
-        //document.quer;
+        const now = new Date();
+        const month = now.toLocaleString("default", { month: "long" });
+        const today = now.getDate();
+        const td = new Date().toISOString().split("T")[0];
+        const tomorrow = new Date(now);
+        tomorrow.setDate(today + 1);
+        const tmw = tomorrow.toISOString().split("T")[0];
+        if (day.date === td) {
+          forecast__dates[index].innerHTML = "Today";
+        } else if (day.date === tmw) {
+          forecast__dates[index].innerHTML = "Tomorrow";
+        } else {
+          forecast__dates[index].innerHTML = `${today + index} ${month}`;
+        }
       });
-      // let dateForecast = new Date();
-      // let dateForecast.getDate();
-      // dateForecast.getMonth();
-      // let daysForecast = {};
-      // console.log(dateForecast);
+
+      let forecast__icon = document.querySelectorAll(".forecast__icon");
+      forecastDay.forEach((day, index) => {
+        forecast__icon[
+          index
+        ].innerHTML = `<img src="${day.day.condition.icon}">`;
+      });
+
+      let forecast__temp = document.querySelectorAll(".forecast__value");
+      forecastTemp.forEach((day, index) => {
+        forecast__temp[index].innerHTML = `${day.day.avgtemp_c}°C`;
+      });
 
       let weatherIcon = response.current.condition.icon;
       document
