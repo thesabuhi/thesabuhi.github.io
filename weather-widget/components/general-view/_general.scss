@@ -233,6 +233,7 @@
   &:hover {
     @include dropshadow;
     border: 1px solid #8cb2fb;
+    cursor: pointer;
   }
 }
 
