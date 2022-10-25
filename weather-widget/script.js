@@ -85,7 +85,7 @@ setInterval(function () {
   }
 }, 3000);
 
-getApiData("Lisbon");
+getApiData("Baku");
 
 // Input City (serach)
 document
