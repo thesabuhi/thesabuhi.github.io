@@ -439,6 +439,8 @@ progress::-webkit-progress-bar {
 }
 
 progress::-webkit-progress-value {
+  -webkit-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
   background-color: #8cb2fb;
   border-radius: 99px;
 }
@@ -449,6 +451,8 @@ progress::-moz-progress-bar {
 }
 
 progress::-moz-progress-value {
+  -moz-transition: 0.8s ease-in-out;
+  transition: 0.8s ease-in-out;
   background-color: #8cb2fb;
   border-radius: 99px;
 }

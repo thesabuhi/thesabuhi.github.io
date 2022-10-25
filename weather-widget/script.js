@@ -40,7 +40,7 @@ setInterval(function () {
   }
 }, 3000);
 
-getApiData("Baku");
+getApiData("Lisbon");
 
 // Input City (serach)
 document
@@ -52,9 +52,9 @@ document
       const apiData = getApiData(city);
     }
   });
-
+let selectedDay = 0;
 // Fetch API
-function getApiData(city, selectedDay) {
+function getApiData(city) {
   const options = {
     method: "GET",
     headers: {
