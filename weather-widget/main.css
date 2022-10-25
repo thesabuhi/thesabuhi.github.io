@@ -76,6 +76,14 @@ a {
   border: 1px solid #5579CC;
 }
 
+.search-error {
+  border: 1px solid #900;
+}
+.search-error:focus-within {
+  transition: ease-in-out 0.2s;
+  border: 1px solid #900;
+}
+
 .search-input {
   width: 430px;
   height: 60px;
@@ -352,7 +360,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 75%;
+  min-width: 65%;
 }
 
 .detail__weather-icon {
@@ -375,11 +383,11 @@ a {
   display: flex;
   justify-content: flex-end;
   text-align: right;
-  max-width: 25%;
+  max-width: 35%;
   font-size: 26px;
   font-weight: 300;
   line-height: 1.2;
-  padding-bottom: 22px;
+  padding-bottom: 28px;
   text-transform: capitalize;
 }
 

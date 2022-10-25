@@ -30,13 +30,51 @@ function getDate() {
   ).textContent = `${weekDay}, ${month} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
 }
 
+function renderDay(response, selectedDay = 0) {
+  document.querySelector(
+    ".detail__weather-value p"
+  ).textContent = `${response.forecast.forecastday[selectedDay].day.avgtemp_c}°C`;
+  document.querySelector(".detail__weather-text p").textContent =
+    response.forecast.forecastday[selectedDay].day.condition.text;
+  let weatherIcon =
+    response.forecast.forecastday[selectedDay].day.condition.icon;
+
+  document
+    .querySelector(".detail__weather-icon img")
+    .setAttribute("src", weatherIcon.replace("64x64", "128x128"));
+
+  document.getElementById("chance-of-rain-6").textContent =
+    response.forecast.forecastday[selectedDay].hour[5].chance_of_rain + "%";
+  document.getElementById("chance-of-rain-12").textContent =
+    response.forecast.forecastday[selectedDay].hour[11].chance_of_rain + "%";
+  document.getElementById("chance-of-rain-18").textContent =
+    response.forecast.forecastday[selectedDay].hour[17].chance_of_rain + "%";
+  document.getElementById("chance-of-rain-24").textContent =
+    response.forecast.forecastday[selectedDay].hour[23].chance_of_rain + "%";
+
+  document.querySelector(".chance-of-rain-progressbar-6").value =
+    response.forecast.forecastday[selectedDay].hour[5].chance_of_rain;
+  document.querySelector(".chance-of-rain-progressbar-12").value =
+    response.forecast.forecastday[selectedDay].hour[11].chance_of_rain;
+  document.querySelector(".chance-of-rain-progressbar-18").value =
+    response.forecast.forecastday[selectedDay].hour[17].chance_of_rain;
+  document.querySelector(".chance-of-rain-progressbar-24").value =
+    response.forecast.forecastday[selectedDay].hour[23].chance_of_rain;
+  document.querySelector(".detail__sunrise-time p").textContent =
+    response.forecast.forecastday[selectedDay].astro.sunrise;
+  document.querySelector(".detail__sunset-time p").textContent =
+    response.forecast.forecastday[selectedDay].astro.sunset;
+}
+
 var saveInputValue;
 
 getDate();
 getClockTime();
 setInterval(function () {
-  if (saveInputValue) {
-    getApiData(saveInputValue);
+  if (!localStorage.getItem("clicked")) {
+    if (saveInputValue) {
+      getApiData(saveInputValue);
+    }
   }
 }, 3000);
 
@@ -52,7 +90,6 @@ document
       const apiData = getApiData(city);
     }
   });
-let selectedDay = 0;
 // Fetch API
 function getApiData(city) {
   const options = {
@@ -70,16 +107,17 @@ function getApiData(city) {
     .then((response) => response.json())
     .then((response) => {
       saveInputValue = response.location.name;
-
+      const headerSearch = document.querySelector(".general__header-search");
+      headerSearch.classList.remove("search-error");
       //Selecting the day
       const forecastDay = response.forecast.forecastday;
       let selectedDay = 0;
       let forecast__block = document.querySelectorAll(".forecast__block");
       forecastDay.forEach((day, index) => {
         forecast__block[index].addEventListener("click", function () {
+          localStorage.setItem("clicked", "yes");
           selectedDay = index;
-          console.log(selectedDay);
-          console.log(response.forecast.forecastday[selectedDay].day.avgtemp_c);
+          renderDay(response, selectedDay);
         });
       });
 
@@ -91,12 +129,24 @@ function getApiData(city) {
       document.querySelector(".detail__country p").textContent =
         response.location.country;
 
-      document.querySelector(
-        ".detail__weather-value p"
-      ).textContent = `${response.forecast.forecastday[selectedDay].day.avgtemp_c}°C`;
+      ///call func
+      renderDay(response, selectedDay);
+      response.forecast.forecastday[selectedDay].day.avgtemp_c;
+      response.forecast.forecastday[selectedDay].day.condition.text;
+      response.forecast.forecastday[selectedDay].day.condition.icon;
+      response.forecast.forecastday[selectedDay].hour[5].chance_of_rain + "%";
 
-      document.querySelector(".detail__weather-text p").textContent =
-        response.current.condition.text;
+      response.forecast.forecastday[selectedDay].hour[5].chance_of_rain + "%";
+      response.forecast.forecastday[selectedDay].hour[11].chance_of_rain + "%";
+      response.forecast.forecastday[selectedDay].hour[17].chance_of_rain + "%";
+      response.forecast.forecastday[selectedDay].hour[23].chance_of_rain + "%";
+      response.forecast.forecastday[selectedDay].hour[5].chance_of_rain;
+      response.forecast.forecastday[selectedDay].hour[11].chance_of_rain;
+      response.forecast.forecastday[selectedDay].hour[17].chance_of_rain;
+      response.forecast.forecastday[selectedDay].hour[23].chance_of_rain;
+
+      response.forecast.forecastday[selectedDay].astro.sunrise;
+      response.forecast.forecastday[selectedDay].astro.sunset;
 
       document.getElementById(
         "humidity"
@@ -114,20 +164,20 @@ function getApiData(city) {
       //Finding local time
       let localtime = response.location.localtime;
       localtime = localtime.split(" ")[1];
-      let apiHours = localtime.split(":")[0];
-      let apiMinutes = localtime.split(":")[1];
+      let apiHours = Number(localtime.split(":")[0]);
+      let apiMinutes = Number(localtime.split(":")[1]);
 
       //Finding sunrise time
       let sunriseClock =
-        response.forecast.forecastday[0].astro.sunrise.split(" ")[0];
-      let sunriseHours = sunriseClock.split(":")[0];
-      let sunriseMinutes = sunriseClock.split(":")[1];
+        response.forecast.forecastday[selectedDay].astro.sunrise.split(" ")[0];
+      let sunriseHours = Number(sunriseClock.split(":")[0]);
+      let sunriseMinutes = Number(sunriseClock.split(":")[1]);
 
       //Finding sunset time
       let sunsetClock =
-        response.forecast.forecastday[0].astro.sunset.split(" ")[0];
+        response.forecast.forecastday[selectedDay].astro.sunset.split(" ")[0];
       let sunsetHours = +12 + Number(sunsetClock.split(":")[0]);
-      let sunsetMinutes = sunsetClock.split(":")[1];
+      let sunsetMinutes = Number(sunsetClock.split(":")[1]);
 
       //Creating variables
       let hoursLater = " hours later";
@@ -145,7 +195,7 @@ function getApiData(city) {
 
       function calculateEstimate() {
         if (apiHours > 0 && apiHours < sunriseHours) {
-          if (sunriseHours - apiHours > 1) {
+          if (sunriseHours - apiHours >= 1) {
             estimatedSunriseHour = sunriseHours - apiHours;
             estimatedSunsetHour = sunsetHours - apiHours;
             estimatedSunrise = `${estimatedSunriseHour} ${hoursLater}`;
@@ -156,8 +206,8 @@ function getApiData(city) {
             estimatedSunrise = `${estimatedSunriseMinute} ${minutesLater}`;
             estimatedSunset = `${estimatedSunsetHour} ${hoursLater}`;
           }
-        } else if (sunriseHours < apiHours && apiHours < sunsetHours) {
-          if (apiHours - sunriseHours > 1) {
+        } else if (sunriseHours <= apiHours && apiHours < sunsetHours) {
+          if (apiHours - sunriseHours >= 1) {
             estimatedSunriseHour = apiHours - sunriseHours;
             estimatedSunsetHour = sunsetHours - apiHours;
             estimatedSunrise = `${estimatedSunriseHour} ${hoursAgo}`;
@@ -173,8 +223,8 @@ function getApiData(city) {
             estimatedSunrise = `${estimatedSunriseHour} ${hoursAgo}`;
             estimatedSunset = `${estimatedSunsetMinute} ${minutesLater}`;
           }
-        } else if (apiHours > sunsetHours && sunsetHours > sunriseHours) {
-          if (apiHours - sunsetHours > 1) {
+        } else if (apiHours >= sunsetHours && sunsetHours > sunriseHours) {
+          if (apiHours - sunsetHours >= 1) {
             estimatedSunriseHour = 24 - sunsetHours + sunriseHours;
             estimatedSunsetHour = apiHours - sunsetHours;
             estimatedSunrise = `${estimatedSunriseHour} ${hoursLater}`;
@@ -191,35 +241,13 @@ function getApiData(city) {
       calculateEstimate();
 
       // Writing to DOM
-      document.querySelector(".detail__sunrise-time p").textContent =
-        response.forecast.forecastday[0].astro.sunrise;
-      document.querySelector(".detail__sunset-time p").textContent =
-        response.forecast.forecastday[0].astro.sunset;
+
       document.querySelector(
         ".detail__sunrise-estimate p"
       ).textContent = `${estimatedSunrise}`;
       document.querySelector(
         ".detail__sunset-estimate p"
       ).textContent = `${estimatedSunset}`;
-
-      //Chance of rain hourly
-      document.getElementById("chance-of-rain-6").textContent =
-        response.forecast.forecastday[0].hour[5].chance_of_rain + "%";
-      document.getElementById("chance-of-rain-12").textContent =
-        response.forecast.forecastday[0].hour[11].chance_of_rain + "%";
-      document.getElementById("chance-of-rain-18").textContent =
-        response.forecast.forecastday[0].hour[17].chance_of_rain + "%";
-      document.getElementById("chance-of-rain-24").textContent =
-        response.forecast.forecastday[0].hour[23].chance_of_rain + "%";
-
-      document.querySelector(".chance-of-rain-progressbar-6").value =
-        response.forecast.forecastday[0].hour[5].chance_of_rain;
-      document.querySelector(".chance-of-rain-progressbar-12").value =
-        response.forecast.forecastday[0].hour[11].chance_of_rain;
-      document.querySelector(".chance-of-rain-progressbar-18").value =
-        response.forecast.forecastday[0].hour[17].chance_of_rain;
-      document.querySelector(".chance-of-rain-progressbar-24").value =
-        response.forecast.forecastday[0].hour[23].chance_of_rain;
 
       //5 days weather forecast
       const forecastIcon = response.forecast.forecastday;
@@ -255,17 +283,14 @@ function getApiData(city) {
         forecast__temp[index].innerHTML = `${day.day.avgtemp_c}°C`;
       });
 
-      let weatherIcon = response.current.condition.icon;
-      document
-        .querySelector(".detail__weather-icon img")
-        .setAttribute("src", weatherIcon.replace("64x64", "128x128"));
-
       apiIsCalled = true;
       getClockTime(apiIsCalled, apiHours, apiMinutes);
       console.log(response);
     })
 
     .catch((err) => {
+      const headerSearch = document.querySelector(".general__header-search");
+      headerSearch.classList.add("search-error");
       clearInterval;
       console.error(err);
     });

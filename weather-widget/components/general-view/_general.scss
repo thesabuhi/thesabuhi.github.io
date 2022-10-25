@@ -55,6 +55,14 @@
   }
 }
 
+.search-error {
+  &:focus-within {
+    transition: ease-in-out 0.2s;
+    border: 1px solid #900;
+  }
+  border: 1px solid #900;
+}
+
 .search-input {
   width: 430px;
   height: 60px;
