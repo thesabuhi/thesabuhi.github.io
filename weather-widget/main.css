@@ -11,7 +11,14 @@ body {
   width: 100vw;
 }
 
-a, p, h1, h2, h3, h4, h5, h6 {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
 }
 
@@ -299,12 +306,25 @@ a {
   color: #0F2546;
 }
 
+@media only screen and (max-width: 1366px) {
+  .today__center-value {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+  }
+  .general__header {
+    flex-direction: column;
+  }
+}
 .detail {
   display: flex;
   flex-direction: column;
   min-width: 30%;
   color: white;
-  padding: 30px 50px;
+  padding: 2% 2.5%;
   background: rgb(67, 87, 112);
   background: linear-gradient(120deg, rgb(67, 87, 112) 0%, rgb(21, 46, 76) 34%, rgb(16, 45, 92) 66%, rgb(23, 58, 126) 100%);
 }
@@ -361,7 +381,7 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 65%;
+  min-width: 45%;
 }
 
 .detail__weather-icon {
@@ -532,4 +552,17 @@ progress::-moz-progress-value {
   flex-direction: column;
   justify-content: flex-start;
   margin-right: 2%;
+}
+
+@media only screen and (max-width: 1366px) {
+  .body {
+    overflow-x: hidden !important;
+  }
+  .detail__sunrise-time,
+.detail__sunset-time {
+    font-size: 16px;
+  }
+  .detail {
+    padding: 2% 2%;
+  }
 }/*# sourceMappingURL=main.css.map */

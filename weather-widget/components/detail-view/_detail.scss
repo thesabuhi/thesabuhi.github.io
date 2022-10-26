@@ -3,7 +3,7 @@
   flex-direction: column;
   min-width: 30%;
   color: white;
-  padding: 30px 50px;
+  padding: 2% 2.5%;
   background: rgb(67, 87, 112);
   background: linear-gradient(
     120deg,
@@ -66,7 +66,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 65%;
+  min-width: 45%;
 }
 
 .detail__weather-icon {
@@ -231,4 +231,18 @@ progress::-moz-progress-value {
   flex-direction: column;
   justify-content: flex-start;
   margin-right: 2%;
+}
+
+@media only screen and (max-width: 1366px) {
+  .body {
+    overflow-x: hidden !important;
+  }
+  .detail__sunrise-time,
+  .detail__sunset-time {
+    font-size: 16px;
+  }
+
+  .detail {
+    padding: 2% 2%;
+  }
 }

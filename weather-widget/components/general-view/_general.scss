@@ -263,3 +263,18 @@
   font-weight: 600;
   color: $heading-color;
 }
+
+@media only screen and (max-width: 1366px) {
+  .today__center-value {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+  }
+  .general__header {
+    flex-direction: column;
+  }
+}
