@@ -37,3 +37,12 @@ a {
     rgba(17, 17, 26, 0.05) 0px 8px 32px;
   transition: ease-in-out 0.2s;
 }
+
+@media only screen and (max-width: 768px) {
+  body {
+    flex-direction: column-reverse;
+    overflow-x: hidden !important;
+    min-height: initial;
+    max-width: 100vw;
+  }
+}

@@ -233,16 +233,64 @@ progress::-moz-progress-value {
   margin-right: 2%;
 }
 
-@media only screen and (max-width: 1366px) {
-  .body {
-    overflow-x: hidden !important;
-  }
-  .detail__sunrise-time,
-  .detail__sunset-time {
-    font-size: 16px;
+@media only screen and (max-width: 768px) {
+  .detail {
+    padding: 5% 6%;
   }
 
-  .detail {
-    padding: 2% 2%;
+  .detail__weather-icon img {
+    width: 120px;
+    margin-bottom: 5px;
+  }
+
+  .detail__sunrise-box,
+  .detail__sunset-box {
+    justify-content: flex-start;
+  }
+
+  .detail__sunrise-icon,
+  .detail__sunset-icon {
+    min-width: 35%;
+  }
+
+  .detail__sunrise-info,
+  .detail__sunset-info {
+    width: 100%;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .detail__sunrise-box,
+  .detail__sunset-box {
+    justify-content: flex-start;
+  }
+
+  .detail__sunrise-estimate,
+  .detail__sunset-estimate {
+    width: 100%;
+  }
+
+  .detail__sunrise-time,
+  .detail__sunset-time,
+  .detail__sunrise-text {
+    font-size: 14px;
+  }
+
+  .detail__weather-value {
+    font-size: 64px;
+  }
+
+  .detail__weather-text {
+    font-size: 20px;
+    padding-bottom: 15px;
+  }
+
+  .detail__progress-bar {
+    min-width: 60%;
+  }
+
+  .detail__clock {
+    padding-right: 4px;
+    margin-right: 4px;
   }
 }

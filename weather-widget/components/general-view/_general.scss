@@ -1,7 +1,6 @@
 .general {
   display: flex;
   flex-direction: column;
-  // min-width: 65%;
   padding: 0px 0px 0px 0px;
 }
 
@@ -271,10 +270,101 @@
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    flex-direction: column-reverse;
+  .general {
+    padding: 5% 6%;
   }
+
   .general__header {
     flex-direction: column;
+  }
+
+  .general__header-elements {
+    width: 100%;
+    justify-content: center;
+    margin: 10px 0;
+  }
+
+  .general__header {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .general__header-dates {
+    min-width: 100%;
+  }
+
+  .general__header-search {
+    width: 100%;
+    margin: 0;
+    justify-content: flex-start;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .today__title {
+    padding: 10px 0;
+  }
+
+  .today__info-blocks {
+    margin: 0;
+  }
+
+  .today__block {
+    max-width: 48%;
+  }
+
+  .today__icon {
+    margin-left: 12px;
+    min-width: 30%;
+  }
+
+  .today__icon img {
+    width: 90%;
+  }
+
+  .today__center {
+    margin: 0;
+    padding: 0% 5%;
+    min-width: 55%;
+  }
+
+  .today__center-text {
+    font-size: 14px;
+  }
+
+  .today__center-value {
+    font-size: 18px;
+  }
+
+  .today__right {
+    display: none;
+  }
+
+  .forecast__info-blocks {
+    margin: 0;
+  }
+
+  .forecast__block {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .forecast__date {
+    min-width: 23%;
+    font-size: 16px;
+    justify-content: flex-start;
+    font-weight: 600;
+    color: #0f2546;
+  }
+
+  .forecast__value {
+    min-width: 20%;
+    display: flex;
+    justify-content: flex-end;
   }
 }
